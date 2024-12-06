@@ -1,0 +1,307 @@
+.PatientGrid {
+	font-family: 'Arial', sans-serif;
+	padding: 20px;
+	color: #ffffff;
+	background-color: #1e1e2f;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.table-container {
+	overflow-x: auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.search-bar {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 600px;
+}
+
+.search-bar input {
+	width: calc(100% - 40px);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgba(0, 0, 0, 0.4);
+	color: #ffffff;
+	font-size: 14px;
+	transition: background 0.3s, border 0.3s;
+	box-sizing: border-box;
+	appearance: none;
+}
+
+.search-bar input:focus {
+	background: rgba(50, 50, 70, 0.7);
+	border-color: #6a5acd;
+	outline: none;
+}
+
+.clear-button {
+	background: transparent;
+	border: none;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	padding: 0 10px;
+	transition: color 0.3s, transform 0.3s;
+}
+
+.clear-button:hover {
+	color: #e4e4fa;
+	transform: rotate(90deg);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+th,
+td {
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 12px;
+	text-align: left;
+	color: #ffffff;
+}
+
+th {
+	background: rgba(40, 40, 60, 0.8);
+	color: #e4e4fa;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background 0.3s, color 0.3s;
+}
+
+th:hover {
+	background: rgba(90, 70, 120, 0.9);
+	color: #ffffff;
+}
+
+td {
+	transition: background 0.3s, color 0.3s;
+}
+
+td:hover {
+	background: rgba(50, 50, 70, 0.7);
+	color: #e4e4fa;
+}
+
+.parameters-button {
+	background: linear-gradient(135deg, #3d3476, #483d8b);
+	color: white;
+	border: none;
+	padding: 8px 12px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 14px;
+	transition: background 0.3s, transform 0.3s;
+}
+
+.parameters-button:hover {
+	background: linear-gradient(135deg, #352d6e, #6a5acd);
+	transform: scale(1.05);
+}
+
+.patient-details,
+.edit-dialog {
+	background: rgba(30, 30, 47, 0.95);
+	padding: 20px;
+	border-radius: 15px;
+	max-width: 600px;
+	width: 90%;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+	position: relative;
+	margin: 0 auto;
+	animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.patient-details input,
+.patient-details select,
+.edit-dialog input,
+.edit-dialog select {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgba(0, 0, 0, 0.4);
+	color: #ffffff;
+	font-size: 14px;
+	transition: background 0.3s, border 0.3s;
+	box-sizing: border-box;
+	appearance: none;
+}
+
+.patient-details select,
+.edit-dialog select {
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	padding-right: 30px;
+	position: relative;
+	cursor: pointer;
+}
+
+.patient-details select::after,
+.edit-dialog select::after {
+	content: '▼';
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	color: #ffffff;
+}
+
+.patient-details input:focus,
+.patient-details select:focus,
+.edit-dialog input:focus,
+.edit-dialog select:focus {
+	background: rgba(50, 50, 70, 0.7);
+	border-color: #6a5acd;
+	outline: none;
+}
+
+.patient-details label,
+.edit-dialog label {
+	font-size: 14px;
+	color: #e4e4fa;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.patient-details button,
+.edit-dialog button {
+	margin-left: 12px;
+	margin-top: 15px;
+	padding: 10px 15px;
+	font-size: 14px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background: linear-gradient(135deg, #3d3476, #483d8b);
+	color: #ffffff;
+	transition: background 0.3s, transform 0.3s;
+}
+
+.patient-details button:hover {
+	background: linear-gradient(135deg, #352d6e, #3f3581);
+}
+
+.edit-dialog button:hover {
+	background: linear-gradient(135deg, #352d6e, #6a5acd);
+	transform: scale(1.05);
+}
+
+.patient-details button[type="button"]:last-child,
+.edit-dialog button[type="button"]:last-child {
+	background: rgba(255, 255, 255, 0.1);
+	margin-left: 20px;
+	color: #ffffff;
+	transition: background 0.3s, color 0.3s;
+}
+
+.patient-details button[type="button"]:last-child:hover,
+.edit-dialog button[type="button"]:last-child:hover {
+	background: rgba(138, 47, 219, 0.6);
+	color: #ffffff;
+}
+
+.closeButton {
+	position: absolute;
+	top: 25px;
+	right: 20px;
+	background: transparent;
+	border: none;
+	font-size: 30px;
+	color: #fff;
+	cursor: pointer;
+	padding: 7px;
+	transition: color 0.3s, transform 0.3s;
+}
+
+.closeButton:hover {
+	color: #e4e4fa;
+	transform: rotate(90deg);
+}
+
+.parameters-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.parameters-table th,
+.parameters-table td {
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 10px;
+	text-align: left;
+	color: #ffffff;
+}
+
+.parameters-table th {
+	background: rgba(50, 50, 80, 0.8);
+	color: #e4e4fa;
+	text-transform: uppercase;
+}
+
+.parameters-table td:hover {
+	background: rgba(70, 70, 90, 0.7);
+}
+
+.sort-menu {
+	display: none;
+	position: absolute;
+	background-color: rgba(30, 30, 47, 0.95);
+	color: #ffffff;
+	border-radius: 5px;
+	min-width: 100px;
+	padding: 10px;
+	z-index: 10;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.sort-menu.show {
+	display: block;
+}
+
+.sort-menu button {
+	background: none;
+	border: none;
+	color: #ffffff;
+	font-size: 14px;
+	padding: 5px;
+	text-align: left;
+	width: 100%;
+	cursor: pointer;
+}
+
+.sort-menu button:hover {
+	background-color: rgba(70, 70, 90, 0.7);
+}
