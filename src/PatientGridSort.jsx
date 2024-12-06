@@ -38,7 +38,6 @@ const PatientGridSort = () => {
 						},
 					}
 				);
-				//console.log("Data retrieved:", response.data);
 				setData(response.data);
 				setLoading(false);
 				
@@ -203,6 +202,17 @@ const PatientGridSort = () => {
 					return bHasAlarm - aHasAlarm;
 				} else {
 					return aHasAlarm - bHasAlarm;
+				}
+			});
+			setData(sortedData);
+		} else if (columnId === "parameters") {
+			const sortedData = [...data].sort((a, b) => {
+				const aParams = a.parameters ? a.parameters.length : 0;
+				const bParams = b.parameters ? b.parameters.length : 0;
+				if (desc) {
+					return bParams - aParams;
+				} else {
+					return aParams - bParams;
 				}
 			});
 			setData(sortedData);
