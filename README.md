@@ -1,6 +1,6 @@
 # Ascom_project
 
-# **Patien-Grid**
+# **Patient-Grid**
 React application for displaying, searching, sorting, and editing patient data fetched from an API.
 
 ## **Key Features**
@@ -19,8 +19,8 @@ Before running the application, ensure you have the following installed on your 
 #### **Installation and Setup**
 **1** : Clone the repository:
 ```bash
-git clone https://github.com/your-repo/patient-management-app.git
-cd patient-management-app
+git clone git@github.com:tomnouk/Ascom_project.git
+cd Ascom_project
 ```
 **2** : Install dependencies:
 ```bash
